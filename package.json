@@ -1,0 +1,15 @@
+{
+  "name": "sassconcepts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "style": "sass --watch style.scss dist/style.css",
+    "build": "npx webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "webpack": "^5.39.1",
+    "webpack-cli": "^4.7.2"
+  }
+}
