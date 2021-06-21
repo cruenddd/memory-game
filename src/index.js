@@ -22,21 +22,16 @@ let before
 let soluted = []
 let erros = 0 
 
-
-
 function onClickInElement() {
     const nowAnimal = { 
         name: this.getAttribute('animal'),
         id: this.getAttribute('elemento')
     }
     const same = soluted.filter((i) => i.id === nowAnimal.id)
-
-
 if(same.length) {
     console.log('esse elemento já foi solucionado!')
  return 
 }
-
  if(!before) { 
     before = nowAnimal
         const index = this.getAttribute('elemento')
@@ -45,7 +40,6 @@ if(same.length) {
  } else {
     const oldIdAnimal = before
     if(oldIdAnimal.name === nowAnimal.name && oldIdAnimal.id !== nowAnimal.id) {
-        
         soluted.push(nowAnimal,oldIdAnimal)
         const acerto = document.getElementsByClassName(`${oldIdAnimal.name}`)
         const index = acerto[0].getAttribute('elemento')
@@ -53,7 +47,6 @@ if(same.length) {
         acerto[0].setAttribute('src',img)
         acerto[1].setAttribute('src',img)
         before = null
-
         console.log('Parabés acertou!')
     } else {
         console.log('Você errou :/')
@@ -68,39 +61,28 @@ if(same.length) {
          }, 700)
         before=null
         erros = erros + 1
-        value.textContent = erros
-        
-    }
-       
+        value.textContent = erros  
+    }      
  }
 }
-
 function shuffle(array) {
     var currentIndex = array.length,  randomIndex;
       while (0 !== currentIndex) {
-  
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
-  
       [array[currentIndex], array[randomIndex]] = [
         array[randomIndex], array[currentIndex]];
     }
-  
     return array;
   }
-
-function addItens() {
+function configElements() {
     const shuffledAnimais = shuffle(animais)
     shuffledAnimais.forEach((animal,index) => {
         elements[index].setAttribute('animal', animal.name)
         elements[index].setAttribute('elemento', index)
         elements[index].setAttribute('src', interrogação)
         elements[index].classList.add(`${animal.name}`)
-
-
         elements[index].addEventListener('click', onClickInElement) 
-
     })
 }
-
-window.onload = addItens
+window.onload = configElements
