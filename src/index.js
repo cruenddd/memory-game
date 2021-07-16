@@ -48,7 +48,7 @@ if(same.length) {
         acerto[0].setAttribute('src',img)
         acerto[1].setAttribute('src',img)
         before = null
-        console.log('Parabés acertou!')
+        console.log('Parabés acertouy!')
     } else {
         console.log('Você errou :/')
         const erro = document.getElementsByClassName(`${oldIdAnimal.name}`)
