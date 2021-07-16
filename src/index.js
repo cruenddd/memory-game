@@ -23,6 +23,7 @@ let soluted = []
 let erros = 0 
 
 function onClickInElement() {
+    console.log('clickelement kkk')
     const nowAnimal = { 
         name: this.getAttribute('animal'),
         id: this.getAttribute('elemento')
